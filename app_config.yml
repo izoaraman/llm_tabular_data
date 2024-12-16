@@ -18,6 +18,7 @@ llm_config:
     temperature: 0.0
 
 rag_config:
+  # collection_name: titanic_small
   # collection_name: team_meeting_agenda_knowledge_sharing
   # collection_name: aps ea salary
   collection_name: cost centre list
