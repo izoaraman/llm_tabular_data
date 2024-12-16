@@ -1,0 +1,18 @@
+gradio
+langchain>=0.0.300
+langchain-openai
+chromadb
+pandas
+pyprojroot
+pyyaml
+python-dotenv
+
+# langchain_community
+# langchain_core
+pandas
+pyprojroot
+python-dotenv
+PyYAML
+SQLAlchemy
+openai
+
