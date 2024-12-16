@@ -7,9 +7,6 @@ from utils.ui_settings import UISettings
 with gr.Blocks() as demo:
     with gr.Tabs():
         with gr.TabItem("Q&A-and-RAG-with-SQL-and-TabularData"):
-            ##############
-            # First ROW:
-            ##############
             with gr.Row() as row_one:
                 chatbot = gr.Chatbot(
                     [],
@@ -21,9 +18,7 @@ with gr.Blocks() as demo:
                 )
                 # **Adding like/dislike icons
                 chatbot.like(UISettings.feedback, None, None)
-            ##############
-            # SECOND ROW:
-            ##############
+
             with gr.Row():
                 input_txt = gr.Textbox(
                     lines=4,
@@ -31,9 +26,7 @@ with gr.Blocks() as demo:
                     placeholder="Enter text and press enter, or upload PDF files",
                     container=False,
                 )
-            ##############
-            # Third ROW:
-            ##############
+
             with gr.Row() as row_two:
                 text_submit_btn = gr.Button(value="Submit text")
                 upload_btn = gr.UploadButton(
@@ -48,9 +41,7 @@ with gr.Blocks() as demo:
                         "Q&A with Uploaded CSV/XLSX SQL-DB"
                     ], value="Q&A with stored SQL-DB")
                 clear_button = gr.ClearButton([input_txt, chatbot])
-            ##############
-            # Process:
-            ##############
+
             file_msg = upload_btn.upload(fn=UploadFile.run_pipeline, inputs=[
                 upload_btn, chatbot, app_functionality], outputs=[input_txt, chatbot], queue=False)
 
